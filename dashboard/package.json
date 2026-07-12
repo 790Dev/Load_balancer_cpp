@@ -1,0 +1,12 @@
+{
+  "name": "load-balancer-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard for C++ Load Balancer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

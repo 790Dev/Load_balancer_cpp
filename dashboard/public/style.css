@@ -1,0 +1,71 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    color: #333;
+}
+
+h1, h2 {
+    color: #000;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.algorithm-controls {
+    margin-top: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+button.active {
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.up {
+    color: green;
+}
+
+.down {
+    color: red;
+}
+
+.metrics-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.metric-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 150px;
+}
+
+.metric-value {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 5px;
+}

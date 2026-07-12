@@ -1,0 +1,15 @@
+# C++ Build Files
+*.exe
+*.o
+*.out
+*.log
+build/
+bin/
+
+# Node.js
+node_modules/
+.env
+
+# OS Generated
+.DS_Store
+Thumbs.db

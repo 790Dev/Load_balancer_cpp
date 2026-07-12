@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Load Balancer Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Layer-7 HTTP Load Balancer</h1>
+
+    <div class="card">
+        <h2>Algorithm</h2>
+        <p>Current: <strong id="current-algorithm">Round Robin</strong></p>
+        <div class="algorithm-controls">
+            <button id="btn-round-robin" onclick="setAlgorithm('round-robin')" class="active">Round Robin</button>
+            <button id="btn-least-connection" onclick="setAlgorithm('least-connection')">Least Connections</button>
+            <button onclick="simulateLoad()">Simulate Load Spike</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Metrics</h2>
+        <div class="metrics-grid">
+            <div class="metric-box">
+                Total Requests
+                <span id="requests" class="metric-value">0</span>
+            </div>
+            <div class="metric-box">
+                Failed Requests
+                <span id="failed" class="metric-value">0</span>
+            </div>
+            <div class="metric-box">
+                Active Connections
+                <span id="connections" class="metric-value">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Backend Servers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Port</th>
+                    <th>Status</th>
+                    <th>Active Connections</th>
+                    <th>Total Handled</th>
+                </tr>
+            </thead>
+            <tbody id="backends-body">
+                <!-- Dynamically populated via JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
