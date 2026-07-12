@@ -2,7 +2,7 @@
 
 A production-style Layer-7 HTTP load balancer built from scratch in C++. It features a multithreaded architecture, active health checking, dynamic routing algorithms, and a real-time monitoring dashboard.
 
-## 🌟 Key Features
+## Key Features
 
 - **Multithreaded Request Handling**: Utilizes a custom Thread Pool with 20 worker threads for high-concurrency request processing.
 - **Dynamic Routing Algorithms**: Supports `Round-Robin` and `Least-Connections`, switchable at runtime without restarting the server.
@@ -11,13 +11,13 @@ A production-style Layer-7 HTTP load balancer built from scratch in C++. It feat
 - **Real-Time Observability**: Built-in Admin API exposing metrics (total requests, active connections, fail rates).
 - **Web Dashboard**: A Node.js-based UI to monitor metrics, view per-backend request distribution, and toggle algorithms in real-time.
 
-## 🏗️ Architecture Layout
+## Architecture Layout
 
 1. **Load Balancer (C++)**: Listens on Port `8080`. Distributes incoming HTTP traffic.
 2. **Backend Services (Node.js/Docker)**: 3 containerized backend servers listening on ports `5001`, `5002`, and `5003`.
 3. **Admin Dashboard (Node.js)**: Runs on Port `3000` to visualize the load balancer's state and metrics.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - C++ Compiler (supporting C++11 or higher) & CMake
@@ -49,7 +49,7 @@ node server.js
 ```
 *(Visit `http://localhost:3000` in your browser).*
 
-## 🔌 Admin API Endpoints
+## Admin API Endpoints
 
 The load balancer intercepts specific routes on port `8080` for monitoring and control:
 
@@ -59,7 +59,7 @@ The load balancer intercepts specific routes on port `8080` for monitoring and c
 - `GET /algorithm/round-robin` - Switches routing algorithm to Round Robin dynamically.
 - `GET /algorithm/least-connection` - Switches routing algorithm to Least Connections dynamically.
 
-## ⚙️ Configuration
+## Configuration
 
 Check `.env.example` for the standard configuration variables you can use:
 ```ini
