@@ -6,7 +6,7 @@ async function fetchMetrics() {
         const response = await fetch(`${API_BASE}/metrics`);
         if (!response.ok) return;
         const data = await response.json();
-        
+
         document.getElementById("requests").innerText = data.totalRequests || 0;
         document.getElementById("failed").innerText = data.failedRequests || 0;
         document.getElementById("connections").innerText = data.activeConnections || 0;
@@ -21,24 +21,24 @@ async function fetchBackends() {
         const response = await fetch(`${API_BASE}/backends`);
         if (!response.ok) return;
         const data = await response.json();
-        
+
         const tbody = document.getElementById("backends-body");
         tbody.innerHTML = ""; // Clear existing rows
-        
+
         data.forEach(backend => {
             const tr = document.createElement("tr");
-            
+
             const statusClass = backend.healthy ? "up" : "down";
             const statusText = backend.healthy ? "UP" : "DOWN";
-            
+
             tr.innerHTML = `
                 <td>${backend.id}</td>
                 <td>${backend.port}</td>
                 <td class="${statusClass}">${statusText}</td>
                 <td>${backend.requests}</td>
-                <td>${backend.totalHandled || 0}</td>
+                <td style="color: #00f2fe; font-weight: bold;">${backend.totalHandled || 0}</td>
             `;
-            
+
             tbody.appendChild(tr);
         });
     } catch (error) {
@@ -52,12 +52,12 @@ async function setAlgorithm(alg) {
         const response = await fetch(`${API_BASE}/algorithm/${alg}`);
         if (!response.ok) return;
         const data = await response.json();
-        
+
         if (data.status === "success") {
             const isRoundRobin = alg === "round-robin";
-            
+
             document.getElementById("current-algorithm").innerText = isRoundRobin ? "Round Robin" : "Least Connections";
-            
+
             document.getElementById("btn-round-robin").className = isRoundRobin ? "active" : "";
             document.getElementById("btn-least-connection").className = isRoundRobin ? "" : "active";
         }
@@ -69,10 +69,9 @@ async function setAlgorithm(alg) {
 // Simulate heavy traffic
 function simulateLoad() {
     console.log("Simulating 30 concurrent requests...");
-    for(let i=0; i<30; i++) {
-        // We catch the error because we don't care about the response, 
-        // we just want to send the HTTP request to the Load Balancer
-        fetch("http://localhost:8080/").catch(e => {}); 
+    for (let i = 0; i < 30; i++) {
+
+        fetch("http://localhost:8080/").catch(e => { });
     }
 }
 
