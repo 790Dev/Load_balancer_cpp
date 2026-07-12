@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Load Balancer Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <h1>Layer-7 HTTP Load Balancer</h1>
@@ -15,7 +17,8 @@
         <div class="algorithm-controls">
             <button id="btn-round-robin" onclick="setAlgorithm('round-robin')" class="active">Round Robin</button>
             <button id="btn-least-connection" onclick="setAlgorithm('least-connection')">Least Connections</button>
-            <button onclick="simulateLoad()">Simulate Load Spike</button>
+            <button onclick="simulateLoad()" style="background: #ff4b2b; margin-left: auto;">🚀 Simulate Load
+                Spike</button>
         </div>
     </div>
 
@@ -50,11 +53,12 @@
                 </tr>
             </thead>
             <tbody id="backends-body">
-                <!-- Dynamically populated via JS -->
+
             </tbody>
         </table>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
